@@ -201,10 +201,67 @@ function submitWithEnter(enter){
     //Simulates a mouse click on "Submit"-button
     document.getElementById("getData").click();
     document.getElementById("whatDay").click();
-}*/
+}
+
 
 $(document).ready(function(){
+    $("#getData").click(function(){
 
-    // jQuery methods go here...
-  
-  });
+            const settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + sign + "&day=" + date,
+                "method": "GET",
+                "headers": {
+                    "X-RapidAPI-Key": "280fafafe0mshe9c70176f03a1f5p1fde23jsn56c5a1aa5fe1",
+                    "X-RapidAPI-Host": "sameer-kumar-aztro-v1.p.rapidapi.com"
+                }
+    };
+            
+            $.ajax(settings).done(function (response) {
+                $("#getData").text("wow");
+
+                var sign1 = response.sign;
+                var day1 = response.date;
+                var resultSign = response.result;
+
+
+                $("#signs").html("<b>" + sign+ " + "+date+ "</b>");
+                $("#results").text(""+resultSign+"");
+            });
+
+            $("#signs").val("");
+            4("#whatDay").val("");
+    })
+    })*/
+
+
+    $(document).ready(function(){
+        $("button").click(function(){
+          console.log("The paragraph was clicked.");
+        });
+      });
+    
+      
+    
+    $(function(){
+    
+        var $activities = $("#activities");  
+    
+        $.ajax({
+            type: "GET",
+            url: "http://www.boredapi.com/api/activity",
+            success: function (data) {
+            console.log("Success", data)
+            }
+        })
+    })
+    
+    
+    $(function() {
+        $( "#activities" ).selectmenu();
+     
+        $( "#price" ).selectmenu();
+     
+        $( "#number" ).selectmenu();
+      } );
