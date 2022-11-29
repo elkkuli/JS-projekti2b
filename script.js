@@ -236,32 +236,26 @@ $(document).ready(function(){
     })*/
 
 
-    $(document).ready(function(){
-        $("button").click(function(){
+$("document").ready(function(){
+        $("span").click(function(){
+        $("#outCome").data("type", src="http://www.boredapi.com/api/activity?type=");
+        $("#outCome").text($("#outCome").data("type"));
           console.log("The paragraph was clicked.");
         });
       });
     
-      
+
     
-    $(function(){
+$(function(){
     
-        var $activities = $("#activities");  
+        var $activities = $("#activities");
     
         $.ajax({
             type: "GET",
-            url: "http://www.boredapi.com/api/activity",
+            url: "http://www.boredapi.com/api/activity?type=",
             success: function (data) {
-            console.log("Success", data)
+            console.log("Success", data);
             }
         })
     })
-    
-    
-    $(function() {
-        $( "#activities" ).selectmenu();
      
-        $( "#price" ).selectmenu();
-     
-        $( "#number" ).selectmenu();
-      } );
