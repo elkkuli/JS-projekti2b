@@ -1,261 +1,98 @@
-//Global variable (will get the XML response as value)
-/*var vastaus;
-
-//Listener for the XML request to be made
-document.getElementById("getData").addEventListener("click", loadDoc);
-
-//Listener for enter to simulate click effect
-document.getElementById("signs").addEventListener("keypress", submitWithEnter);
-document.getElementById("whatDay").addEventListener("keypress", submitWithEnter);
-
-function loadDoc() {
-    //Making the XML request
-    var xhr = new XMLHttpRequest;
-
-    //Defining information to be given to the url show we get specific data
-    var sign = getSigns();
-    var day = todaysDate();
-
-    xhr.open("GET", "https://aztro.sameerkumar.website?sign=" + sign + "&day=" + day, true);
-    xhr.send();
-
-    //When the request is ready
-    xhr.onreadystatechange = function(){
-        //If the response is valid
-        if(this.readyState == 4 && this.status == 200){
-            vastaus = xhr.responseXML;
-            getInfo();
+$("#education").click(function(doApiRequest){
+    $.ajax({
+        type: "GET",
+        url: "http://www.boredapi.com/api/activity?type=education",
+        success: function (data) {
+            console.log("Success", data)
+            document.getElementById("outCome").textContent = data.activity;
         }
-    }
-}
+    });
+})
 
-function getSigns(){
-    //Getting the information about the select user has made
-    var select = document.getElementById('signs');
-    var value = select.options[select.selectedIndex].value;
-    var id;
+$("#recreational").click(function(doApiRequest){
+    $.ajax({
+        type: "GET",
+        url: "http://www.boredapi.com/api/activity?type=recreational",
+        success: function (data) {
+            console.log("Success", data)
+            document.getElementById("outCome").textContent = data.activity;
+        }
+    });
+})
 
-    //Choosing/assigning the right id to use
-    switch (parseInt(value)) {
-        case 1:
-            id = 1045; //Itis
-            break;
-        case 2:
-            id = 1031; //Kinopalatsi
-            break;
-        case 3:
-            id = 1032; //Maxim
-            break;
-        case 4:
-            id = 1033; //Tennispalatsi
-            break;
-        default:
-            
-    }
+$("#social").click(function(doApiRequest){
+    $.ajax({
+        type: "GET",
+        url: "http://www.boredapi.com/api/activity?type=social",
+        success: function (data) {
+            console.log("Success", data)
+            document.getElementById("outCome").textContent = data.activity;
+        }
+    });
+})
 
-    return id;
-}
+$("#diy").click(function(doApiRequest){
+    $.ajax({
+        type: "GET",
+        url: "http://www.boredapi.com/api/activity?type=diy",
+        success: function (data) {
+            console.log("Success", data)
+            document.getElementById("outCome").textContent = data.activity;
+        }
+    });
+})
 
-function todaysDate(){
-    //Getting the information about the select user has made
-    var select = document.getElementById('whatDay');
-    var value = select.options[select.selectedIndex].value;
+$("#charity").click(function(doApiRequest){
+    $.ajax({
+        type: "GET",
+        url: "http://www.boredapi.com/api/activity?type=charity",
+        success: function (data) {
+            console.log("Success", data)
+            document.getElementById("outCome").textContent = data.activity;
+        }
+    });
+})
 
-    //Variables
-    const d = new Date();
-    var päivä = d.getDate();
-    var kuukausi = d.getMonth();
-    var vuosi = d.getFullYear();
+$("#cooking").click(function(doApiRequest){
+    $.ajax({
+        type: "GET",
+        url: "http://www.boredapi.com/api/activity?type=cooking",
+        success: function (data) {
+            console.log("Success", data)
+            document.getElementById("outCome").textContent = data.activity;
+        }
+    });
+})
 
-    //To get the right month we have to add 1 (parseing because kuukausi is type "str")
-    kuukausi = parseInt(kuukausi) + 1;
+$("#relaxation").click(function(doApiRequest){
+    $.ajax({
+        type: "GET",
+        url: "http://www.boredapi.com/api/activity?type=relaxation",
+        success: function (data) {
+            console.log("Success", data)
+            document.getElementById("outCome").textContent = data.activity;
+        }
+    });
+})
 
-    //Calculating the dates
-    switch(parseInt(value)){
-        case 1:
-            päivä = päivä; //"Päivä" stays the same
-            break;
-        case 2:
-            päivä = parseInt(päivä)+1; //Adding 1 to the day to get the date of tomorrow
-            break;
-        case 3:
-            päivä = parseInt(päivä)+2; //Adding 2 to the day to get the day after tommorrows date
-            break;
-    }
+$("#music").click(function(doApiRequest){
+    $.ajax({
+        type: "GET",
+        url: "http://www.boredapi.com/api/activity?type=music",
+        success: function (data) {
+            console.log("Success", data)
+            document.getElementById("outCome").textContent = data.activity;
+        }
+    });
+})
 
-    var päiväys = päivä + "." + kuukausi + "." + vuosi;
-
-    //Changing elements with id "whatDate" innerHTML to have the text "Näytökset: " and the calculated date
-    document.getElementById("whatDate").innerHTML = "Your horoscope on: " + päiväys;
-    document.getElementById("whatDate").className = ""; //Removing it's class "hide" so it shows
-
-    return päiväys;
-}
-
-function getInfo(){
-    //Emptying the div incase there already is some movies so we can show new ones
-    document.getElementById("astrosigns").innerHTML = "";
-
-    //Searching specific movies
-    var movies = vastaus.getElementsByTagName("Show");
-
-    //This loop goes through a list of all the movies and collects data we need
-    for(var i = 0; i < movies.length; i++){
-        
-        var movie = movies[i];
-    
-        var title = movie.getElementsByTagName("Title")[0];
-        var otsikko = title.innerHTML;
-
-        var images = movie.getElementsByTagName("Images")[0];
-
-        var poster = images.getElementsByTagName("EventMediumImagePortrait")[0];
-        var portrait = poster.innerHTML;
-
-        var language = movie.getElementsByTagName("SpokenLanguage")[0];
-        var kieli = language.innerHTML;
-
-        var showtime = movie.getElementsByTagName("dttmShowStart")[0];
-        var alku = showtime.innerHTML;
-        alku = alku.slice(11, alku.length-3);
-    
-        var genre = movie.getElementsByTagName("Genres")[0];
-        var laji = genre.innerHTML;
-
-        var movielength = movie.getElementsByTagName("LengthInMinutes")[0];
-        var kesto = movielength.innerHTML;
-
-        var tickets = movie.getElementsByTagName("ShowURL")[0];
-        var liput = tickets.innerHTML;
-
-        displayMovies(i,otsikko, portrait, kieli, alku, laji, kesto, liput);
-    }
-}
-
-function displayHoros(i, otsikko, portrait, kieli, alku, laji, kesto, liput){
-    //This function makes the display of the movies with data we have collected before
-
-    var container = document.getElementById("astrosigns"); //This is a grid-container that will have all the "moviecards"
-
-    //Creating "div element" for the individual movie
-    var show = document.createElement("div");
-        show.id = "movie"+i;
-        show.className = "grid-item row";
-    container.appendChild(show);
-
-    var header = document.createElement("div");
-        header.className = "col-sm-12 header";
-    show.appendChild(header);
-
-    var title = document.createElement("h5");
-        title.innerHTML = otsikko;
-    header.appendChild(title);
-
-    //Creating two columns to display data in
-    var column1 = document.createElement("div");
-        column1.className = "col-sm-4 column1";
-    show.appendChild(column1);
-
-    var column2 = document.createElement("div");column1
-        column2.className = "col-sm-8 column2";
-    show.appendChild(column2);
-
-    //Appending data into columns
-    var image = document.createElement("img");
-        image.src = portrait;
-    column1.appendChild(image);
-
-    var startingTime = document.createElement("p");
-        startingTime.innerHTML = "Aloitusaika: "+ alku;
-    column2.appendChild(startingTime);
-
-    
-    var length = document.createElement("p");
-        length.innerHTML = "Kesto: " + kesto + " min";
-    column2.appendChild(length);
-
-    var language = document.createElement("p");
-        language.innerHTML = "Kieli: " + kieli;
-        language.className = "kieli";
-    column2.appendChild(language);
-
-    var genre = document.createElement("p");
-        genre.innerHTML = "Tyylilaji: " + laji;
-    column2.appendChild(genre);
-
-    var tickets = document.createElement("a");
-        tickets.href = liput;
-        tickets.innerHTML = "LIPUT";
-        tickets.target = "_blank";
-    column2.appendChild(tickets);
-}
-
-function submitWithEnter(enter){
-    //If the key is not "Enter" then the code will not process
-    if(enter.key != "Enter"){
-        return;
-    }
-
-    enter.preventDefault();
-
-    //Simulates a mouse click on "Submit"-button
-    document.getElementById("getData").click();
-    document.getElementById("whatDay").click();
-}
-
-
-$(document).ready(function(){
-    $("#getData").click(function(){
-
-            const settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": "https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + sign + "&day=" + date,
-                "method": "GET",
-                "headers": {
-                    "X-RapidAPI-Key": "280fafafe0mshe9c70176f03a1f5p1fde23jsn56c5a1aa5fe1",
-                    "X-RapidAPI-Host": "sameer-kumar-aztro-v1.p.rapidapi.com"
-                }
-    };
-            
-            $.ajax(settings).done(function (response) {
-                $("#getData").text("wow");
-
-                var sign1 = response.sign;
-                var day1 = response.date;
-                var resultSign = response.result;
-
-
-                $("#signs").html("<b>" + sign+ " + "+date+ "</b>");
-                $("#results").text(""+resultSign+"");
-            });
-
-            $("#signs").val("");
-            4("#whatDay").val("");
-    })
-    })*/
-
-
-$("document").ready(function(){
-        $("span").click(function(){
-        $("#outCome").data("type", src="http://www.boredapi.com/api/activity?type=");
-        $("#outCome").text($("#outCome").data("type"));
-          console.log("The paragraph was clicked.");
-        });
-      });
-    
-
-    
-$(function(){
-    
-        var $activities = $("#activities");
-    
-        $.ajax({
-            type: "GET",
-            url: "http://www.boredapi.com/api/activity?type=",
-            success: function (data) {
-            console.log("Success", data);
-            }
-        })
-    })
-     
+$("#busyWork").click(function(doApiRequest){
+    $.ajax({
+        type: "GET",
+        url: "http://www.boredapi.com/api/activity?type=busywork",
+        success: function (data) {
+            console.log("Success", data)
+            document.getElementById("outCome").textContent = data.activity;
+        }
+    });
+})
