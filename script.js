@@ -107,7 +107,7 @@ $("select").change(function(){
     //Muuttuja, jossa API:n asetukset
     const settings = {
         type: "GET",
-        url: "http://www.boredapi.com/api/activity?type="+ tekeminen //Aktiviteetin muuttuja
+        url: "https://www.boredapi.com/api/activity?type="+ tekeminen //Aktiviteetin muuttuja
     }
 
     //Datan kutsu
