@@ -131,6 +131,7 @@ $(document).ready(function(){
     });
   });
 
+//Toiminto, jolla infoteksti animoituu
 $(document).ready(function(){
     $("#moreInfo").click(function(){
       $("#desc").animate({
@@ -139,7 +140,7 @@ $(document).ready(function(){
     });
   });
 
-  
+//Toiminto, jolla aktiviteettiehdotus animoituu
 $(document).ready(function(){
     $("#activities").click(function(){
       $("#outCome").animate({
