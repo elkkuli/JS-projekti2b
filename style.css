@@ -2,37 +2,46 @@
 
 
 body {
-    background-color: #EEE2DC;
+    background-color: #e8d7c7;
 }
 
 h1 {
     letter-spacing: 0.25em;
     font-family: 'Paytone One', sans-serif;
-    color: #8F3150;
+    color:#6d7a71;
     text-align: center;
 }
 
-h4 {
+#moreInfo {
     letter-spacing: 0.25em;
     font-family: 'Paytone One', sans-serif;
-    color: #AC3B61;
+    color: #6d7a71;
     text-align: center;
 }
 
+#moreInfo:hover {
+    color: #cdd9c5;    
+    cursor: pointer;
+}
+
+
 #desc {
-    background-color: #fff3ed;
-    font-family: 'Tenor Sans', sans-serif;
-    width: 550px;
+    background-color: #fdfdfd;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
     padding: 0.5em;
     border-radius: 5px;
-    color: #123C69;
+    color: #ba806a;
     margin: auto;
     font-size: 20px;
     text-align: center;
-    box-sizing: border-box;
+    box-shadow: rgba(170, 168, 145, 0.1) 0px 10px 50px;
 }
 
 #tekemiset {
+    background-color: #fffbf7;
+    border-radius: 20px;
+    padding: 5em;
     margin: auto;
     text-align:center;
 }
@@ -43,23 +52,62 @@ h4 {
 
 #activities {
     font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
     border-style: none;
     border-radius: 10px;
-    background-color: #fff3ed;
+    background-color: #eee2dc;
     width: 200px;
     padding: 0.5em;
     display: block;
     margin: 0 auto;
+    cursor: pointer;
 }
 
 option {
     background-color: white;
 }
 
+
 #outCome {
     font-family: 'Tenor Sans', sans-serif;
-    color: #123C69;
+    color: #ba806a;
     margin-top: 1em;
     font-size: 30px;
     text-align: center;
+}
+
+
+@media all and (max-width: 1200px){
+    body {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #tekemiset {
+        width: 60%;
+    }
+}
+
+@media all and (max-width: 800px){
+
+
+    h1, #outCome{
+        font-size: 2em;
+        text-align: center;
+    }
+
+    h4, #desc{
+        font-size: 1em;
+        text-align: center;
+    }
+
+    #tekemiset {
+        width: 100%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
 }

@@ -99,18 +99,25 @@ $("#busyWork").click(function(){
     });
 })*/
 
-$("select").change(function() {
-    $.ajax({
+$("select").change(function(){
+
+    //Muuttuja aktiviteetille, hakee valitun aktiviteettityypin arvon
+    var tekeminen = $("#activities option:selected").val();
+
+    //Muuttuja, jossa API:n asetukset
+    const settings = {
         type: "GET",
-        url: "http://www.boredapi.com/api/activity?type=",
-        success: function (data) {
-            $("#activities option:selected").val(data.activity);
-            console.log("Success", data)
-            document.getElementById("outCome").textContent = data.activity;
-        }
+        url: "http://www.boredapi.com/api/activity?type="+ tekeminen //Aktiviteetin muuttuja
+    }
+
+    //Datan kutsu
+    $.ajax(settings).done(function(data){
+        console.log("Success", data)
+        $("#outCome").text(data.activity);
     });
 });
 
+//Toiminto, jolla saadaan lisätieto näkyviin
 $(document).ready(function(){
     $("#moreInfo").click(function(){
       $("#desc").slideToggle();
