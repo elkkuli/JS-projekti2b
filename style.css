@@ -72,7 +72,7 @@ option {
     font-family: 'Tenor Sans', sans-serif;
     color: #ba806a;
     margin-top: 1em;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     cursor: pointer;
 }
@@ -94,13 +94,17 @@ option {
 
 
     h1, #outCome{
-        font-size: 2em;
+        font-size: 1.5em;
         text-align: center;
     }
 
     h4, #desc{
         font-size: 1em;
         text-align: center;
+    }
+
+    #activities {
+        width: 100%;
     }
 
     #tekemiset {
@@ -110,5 +114,7 @@ option {
         margin-right: auto;
         text-align: center;
     }
+
+
 
 }

@@ -143,7 +143,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $("#activities").click(function(){
       $("#outCome").animate({
-        fontSize: "30px"}, 3000);
+        fontSize: "25px"}, 3000);
     });
   });
 
