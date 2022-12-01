@@ -20,12 +20,16 @@ h4 {
 }
 
 #desc {
+    background-color: #fff3ed;
     font-family: 'Tenor Sans', sans-serif;
-    font-weight: 300;
+    width: 550px;
+    padding: 0.5em;
+    border-radius: 5px;
     color: #123C69;
-    margin-top: 1em;
+    margin: auto;
     font-size: 20px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 #tekemiset {
@@ -41,7 +45,7 @@ h4 {
     font-family: 'Quicksand', sans-serif;
     border-style: none;
     border-radius: 10px;
-    background-color: #EDC7B7;
+    background-color: #fff3ed;
     width: 200px;
     padding: 0.5em;
     display: block;
