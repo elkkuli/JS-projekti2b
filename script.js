@@ -1,4 +1,6 @@
-$("#education").click(function(doApiRequest){
+
+
+/*$("#education").click(function(){
     $.ajax({
         type: "GET",
         url: "http://www.boredapi.com/api/activity?type=education",
@@ -9,7 +11,7 @@ $("#education").click(function(doApiRequest){
     });
 })
 
-$("#recreational").click(function(doApiRequest){
+$("#recreational").click(function(){
     $.ajax({
         type: "GET",
         url: "http://www.boredapi.com/api/activity?type=recreational",
@@ -20,7 +22,7 @@ $("#recreational").click(function(doApiRequest){
     });
 })
 
-$("#social").click(function(doApiRequest){
+$("#social").click(function(){
     $.ajax({
         type: "GET",
         url: "http://www.boredapi.com/api/activity?type=social",
@@ -31,7 +33,7 @@ $("#social").click(function(doApiRequest){
     });
 })
 
-$("#diy").click(function(doApiRequest){
+$("#diy").click(function(){
     $.ajax({
         type: "GET",
         url: "http://www.boredapi.com/api/activity?type=diy",
@@ -42,7 +44,7 @@ $("#diy").click(function(doApiRequest){
     });
 })
 
-$("#charity").click(function(doApiRequest){
+$("#charity").click(function(){
     $.ajax({
         type: "GET",
         url: "http://www.boredapi.com/api/activity?type=charity",
@@ -53,7 +55,7 @@ $("#charity").click(function(doApiRequest){
     });
 })
 
-$("#cooking").click(function(doApiRequest){
+$("#cooking").click(function(){
     $.ajax({
         type: "GET",
         url: "http://www.boredapi.com/api/activity?type=cooking",
@@ -64,7 +66,7 @@ $("#cooking").click(function(doApiRequest){
     });
 })
 
-$("#relaxation").click(function(doApiRequest){
+$("#relaxation").click(function(){
     $.ajax({
         type: "GET",
         url: "http://www.boredapi.com/api/activity?type=relaxation",
@@ -75,7 +77,7 @@ $("#relaxation").click(function(doApiRequest){
     });
 })
 
-$("#music").click(function(doApiRequest){
+$("#music").click(function(){
     $.ajax({
         type: "GET",
         url: "http://www.boredapi.com/api/activity?type=music",
@@ -86,7 +88,7 @@ $("#music").click(function(doApiRequest){
     });
 })
 
-$("#busyWork").click(function(doApiRequest){
+$("#busyWork").click(function(){
     $.ajax({
         type: "GET",
         url: "http://www.boredapi.com/api/activity?type=busywork",
@@ -95,4 +97,17 @@ $("#busyWork").click(function(doApiRequest){
             document.getElementById("outCome").textContent = data.activity;
         }
     });
-})
+})*/
+
+$("select").change(function() {
+    $.ajax({
+        type: "GET",
+        url: "http://www.boredapi.com/api/activity?type=",
+        success: function (data) {
+            $("#activities option:selected").val(data.activity);
+            console.log("Success", data)
+            document.getElementById("outCome").textContent = data.activity;
+   
+        }
+    });
+});
