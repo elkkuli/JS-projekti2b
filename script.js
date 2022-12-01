@@ -124,3 +124,26 @@ $(document).ready(function(){
     });
   });
 
+//Toiminto, jolla tekstin läpinäkyvyys lisääntyy
+$(document).ready(function(){
+    $("#moreInfo").click(function(){
+      $("h4").fadeTo(1000, 0.4);
+    });
+  });
+
+$(document).ready(function(){
+    $("#moreInfo").click(function(){
+      $("#desc").animate({
+        opacity: 1,
+        fontSize: "20px"}, 1000);
+    });
+  });
+
+  
+$(document).ready(function(){
+    $("#activities").click(function(){
+      $("#outCome").animate({
+        fontSize: "30px"}, 3000);
+    });
+  });
+
