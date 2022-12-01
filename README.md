@@ -14,7 +14,7 @@ The assingment was to build an app by using jQuery. I used Bored Api's open sour
 It should be able to do the following:
 
 * If you're bored, the app gives you different options for different kind of activities to do. 
-* You can choose among <i>education, recreational, social, diy, charity, cooking, relaxation, music, and busywork.</i>
+* You can choose among <i>education, recreational, social, diy, charity, cooking, relaxation, music,</i> and <i> busywork.</i>
 * I also wanted to play with different jQuery events like slideToggle, animate and fadeTo.
 ### View with;
 * Netlify: https://js-projekti2b-elkku.netlify.app
