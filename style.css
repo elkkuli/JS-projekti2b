@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Paytone+One&family=Quicksand:wght@300;400;500;600;700&family=Tenor+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=EB+Garamond:wght@500;600;800&family=Paytone+One&family=Quicksand:wght@300;400;500;600;700&family=Tenor+Sans&display=swap');
 
 body {
     background-color: #e8d7c7;
@@ -39,13 +38,15 @@ h1 {
 #desc {
     background-color: #fdfdfd;
     font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     opacity: 0;
     width: 100%;
     padding: 0.5em;
     border-radius: 5px;
     color: #ba806a;
     margin: auto;
-    font-size: 15px;
+    font-size: 10px;
     text-align: center;
     box-shadow: rgba(170, 168, 145, 0.1) 0px 10px 50px;
 }
@@ -98,7 +99,7 @@ option {
         text-align: center;
     }
 
-    h4, #desc{
+    h4{
         font-size: 1em;
         text-align: center;
     }

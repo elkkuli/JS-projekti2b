@@ -117,6 +117,13 @@ $("select").change(function(){
     });
 });
 
+//Toiminto, jolla otsikko muuttuu
+$(document).ready(function () {
+    $("#moreInfo").click(function () {
+        $("h1").text("I can help you out! 😎");
+    });
+  });
+
 //Toiminto, jolla saadaan lisätieto näkyviin
 $(document).ready(function(){
     $("#moreInfo").click(function(){
@@ -127,7 +134,7 @@ $(document).ready(function(){
 //Toiminto, jolla tekstin läpinäkyvyys lisääntyy
 $(document).ready(function(){
     $("#moreInfo").click(function(){
-      $("h4").fadeTo(1000, 0.4);
+      $("h4").fadeTo(1000, 0.2);
     });
   });
 
@@ -136,7 +143,7 @@ $(document).ready(function(){
     $("#moreInfo").click(function(){
       $("#desc").animate({
         opacity: 1,
-        fontSize: "20px"}, 1000);
+        fontSize: "15px"}, 800);
     });
   });
 
