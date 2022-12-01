@@ -13,10 +13,11 @@
 
     <br> 
 
-    <h1>Are you bored?</h1>
+    <h1 id="main">Are you bored?</h1>
+   <!--- <h1 id="main2" style="display:none">You're not bored anymore!</h1>-->
 
-    <h4>Choose the type of the activity</h4>
-       
+    <h4 id="moreInfo">Click for more information</h4>
+       <p id="desc" style="display:none;">Here are some awesome examples for you to do! <br> Just choose the type of the activity</p>
     <br>
 
     <!--<div id="tekemiset">
@@ -32,6 +33,7 @@
     </div>-->
 
 
+    <div id="tekemiset">
         <select name="activities" id="activities">
             <option value="1" id="education">Education</option>
             <option value="2" id="recreational">Recreational</option>
@@ -43,11 +45,9 @@
             <option value="8" id="music">Music</option>
             <option value="9" id="busyWork">Busy Work</option>
         </select>
+
+    </div>
 <br>
-
-<br>
-
-
     <p id="outCome"></p>
 
 </body>

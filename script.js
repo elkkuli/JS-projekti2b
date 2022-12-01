@@ -107,7 +107,12 @@ $("select").change(function() {
             $("#activities option:selected").val(data.activity);
             console.log("Success", data)
             document.getElementById("outCome").textContent = data.activity;
-   
         }
     });
 });
+
+$(document).ready(function(){
+    $("#moreInfo").click(function(){
+      $("#desc").slideToggle();
+    });
+  });

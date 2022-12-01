@@ -1,20 +1,61 @@
-/*h1 {
-    color: blue;
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Paytone+One&family=Quicksand:wght@300;400;500;600;700&family=Tenor+Sans&display=swap');
+
+
+body {
+    background-color: #EEE2DC;
+}
+
+h1 {
+    letter-spacing: 0.25em;
+    font-family: 'Paytone One', sans-serif;
+    color: #8F3150;
     text-align: center;
 }
 
-button {
-    margin: 0.5em;
-    padding:1em;
-    width: 150px;
-    height: auto;
-    border: none;
-    display: inline-block;
-    border-radius: 5px;
-    background-color: pink;
+h4 {
+    letter-spacing: 0.25em;
+    font-family: 'Paytone One', sans-serif;
+    color: #AC3B61;
+    text-align: center;
 }
 
-p {
-    margin-top: 2em;
+#desc {
+    font-family: 'Tenor Sans', sans-serif;
+    font-weight: 300;
+    color: #123C69;
+    margin-top: 1em;
+    font-size: 20px;
     text-align: center;
-}*/
+}
+
+#tekemiset {
+    margin: auto;
+    text-align:center;
+}
+
+#tekemiset * {
+    text-align:center;
+}
+
+#activities {
+    font-family: 'Quicksand', sans-serif;
+    border-style: none;
+    border-radius: 10px;
+    background-color: #EDC7B7;
+    width: 200px;
+    padding: 0.5em;
+    display: block;
+    margin: 0 auto;
+}
+
+option {
+    background-color: white;
+}
+
+#outCome {
+    font-family: 'Tenor Sans', sans-serif;
+    color: #123C69;
+    margin-top: 1em;
+    font-size: 30px;
+    text-align: center;
+}
