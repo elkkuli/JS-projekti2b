@@ -18,4 +18,3 @@ It should be able to do the following:
 * I also wanted to play with different jQuery events like slideToggle, animate and fadeTo.
 ### View with;
 * Netlify: https://js-projekti2b-elkku.netlify.app
-* Or you can open file in browser: "~../index.html"
